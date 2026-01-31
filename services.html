@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zionike - Growth Marketing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./CSS/Style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .glass-dropdown {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+        }
+    </style>
+</head>
+
+<body class="bg-[#fef8fc] text-slate-800">
+
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="./Assets/Logo.png" alt="Zionike Logo"
+                    class="h-14 md:h-20 w-auto object-contain transform scale-110">
+            </div>
+
+            <nav class="hidden lg:flex items-center space-x-7 glass-nav px-8 py-3 rounded-full shadow-lg relative">
+                <a href="./Home.html" class="font-medium hover:text-orange-500 transition">Home</a>
+
+                <div class="relative group cursor-pointer font-medium flex items-center py-2">
+                    <a href="./services.html" class="hover:text-orange-500 transition">Services</a>
+                    <svg class="w-4 h-4 ml-1 group-hover:rotate-180 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+
+                    <div
+                        class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60]">
+                        <div class="glass-dropdown rounded-2xl shadow-2xl overflow-hidden py-2 border border-white/20">
+                            <a href="#"
+                                class="block px-6 py-3 text-sm text-slate-800 hover:bg-orange-50 hover:text-orange-600 border-b border-slate-50 transition">Website
+                                design</a>
+                            <a href="#"
+                                class="block px-6 py-3 text-sm text-slate-800 hover:bg-orange-50 hover:text-orange-600 border-b border-slate-50 transition">Digital
+                                Marketing & SEO</a>
+                            <a href="#"
+                                class="block px-6 py-3 text-sm text-slate-800 hover:bg-orange-50 hover:text-orange-600 border-b border-slate-50 transition">Ecommerce
+                                & Growth</a>
+                            <a href="#"
+                                class="block px-6 py-3 text-sm text-slate-800 hover:bg-orange-50 hover:text-orange-600 border-b border-slate-50 transition">Social
+                                Media & YouTube</a>
+                            <a href="#"
+                                class="block px-6 py-3 text-sm text-slate-800 hover:bg-orange-50 hover:text-orange-600 border-b border-slate-50 transition">Content
+                                Writing</a>
+                            <a href="#"
+                                class="block px-6 py-3 text-sm text-slate-800 hover:bg-orange-50 hover:text-orange-600 transition">Creative
+                                Video & Design</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="font-medium hover:text-orange-500 transition">Blog</a>
+                <a href="#" class="font-medium hover:text-orange-500 transition">Portfolio</a>
+                <a href="#" class="font-medium hover:text-orange-500 transition">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <button
+                    class="hidden md:block bg-orange-500 text-white px-7 py-2.5 rounded-full font-bold shadow-[0_4px_0_0_#c2410c] active:translate-y-[1px] transition-all">
+                    Contact Us
+                </button>
+                <button id="menu-toggle"
+                    class="lg:hidden p-2 bg-white/90 rounded-full shadow-md border border-slate-100 text-slate-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden lg:hidden flex-col bg-white border-b shadow-2xl px-6 py-8 space-y-6 overflow-y-auto max-h-screen">
+            <a href="#" class="text-xl font-bold text-slate-900">Home</a>
+            <div class="space-y-4">
+                <button id="mobile-services-btn"
+                    class="w-full flex justify-between items-center text-xl font-bold text-slate-900 group">
+                    Services
+                    <svg id="mobile-arrow" class="w-5 h-5 transition-transform duration-300" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="mobile-services-list"
+                    class="hidden flex-col space-y-3 pl-4 border-l-2 border-orange-100 transition-all">
+                    <a href="#" class="text-slate-600 font-medium py-1">Website Design</a>
+                    <a href="#" class="text-slate-600 font-medium py-1">Digital Marketing & SEO</a>
+                    <a href="#" class="text-slate-600 font-medium py-1">Ecommerce & Marketplace Growth</a>
+                    <a href="#" class="text-slate-600 font-medium py-1">Social Media & YouTube</a>
+                    <a href="#" class="text-slate-600 font-medium py-1">Content Writing & Copywriting</a>
+                    <a href="#" class="text-slate-600 font-medium py-1">Creative Video Production</a>
+                </div>
+            </div>
+            <a href="#" class="text-xl font-bold text-slate-900 border-t pt-4">Blog</a>
+            <a href="#" class="text-xl font-bold text-slate-900 border-t pt-4">Portfolio</a>
+            <a href="#" class="text-xl font-bold text-slate-900 border-t pt-4">Contact</a>
+            <button class="w-full bg-orange-500 text-white py-4 rounded-2xl font-bold shadow-lg mt-4">Start
+                Conversation</button>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <section
+            class="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden px-6 text-center">
+            <div class="absolute inset-0 z-0 opacity-[0.05]"
+                style="background-image: linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px); background-size: 60px 60px; [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]">
+            </div>
+
+            <div class="relative z-10 max-w-4xl">
+                <span
+                    class="inline-block rounded-full border border-orange-500 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-orange-600 mb-6">
+                    Our Expertise
+                </span>
+                <h1 class="mb-6 text-5xl font-extrabold tracking-tight text-slate-900 md:text-7xl">
+                    Explore Our <span class="text-orange-600">Core Services</span>
+                </h1>
+                <p class="mx-auto max-w-2xl text-lg text-slate-500 md:text-xl">
+                    Discover our full suite of digital marketing and creative services designed to grow your brand,
+                    expand your reach, and maximize ROI.
+                </p>
+                <div class="mt-10">
+                    <a href="#services"
+                        class="rounded-full bg-slate-900 px-8 py-4 text-white font-bold transition-all hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/30">
+                        View All Services
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-24 px-6 bg-white relative z-10">
+            <div class="mx-auto max-w-7xl">
+                <div class="mb-16 text-center">
+                    <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl text-slate-900">
+                        Tailored Solutions for Growth
+                    </h2>
+                    <div class="mt-2 h-1 w-20 bg-orange-500 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <div
+                        class="group relative rounded-2xl border border-slate-200 bg-white p-8 transition-all hover:border-orange-200 hover:shadow-xl hover:shadow-orange-500/10">
+                        <div
+                            class="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-orange-500 text-orange-600 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">1. Website Design & Development</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-500">Custom, conversion-focused websites
+                            designed to elevate your brand, improve user experience, and turn visitors into loyal
+                            customers.</p>
+                        <div
+                            class="mt-4 flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                            <span>Modern Design</span> • <span>Mobile-Responsive</span> • <span>SEO-Optimized</span>
+                        </div>
+                        <a href="#"
+                            class="mt-6 inline-block font-semibold text-orange-600 hover:translate-x-1 transition-transform">👉
+                            Learn More</a>
+                    </div>
+                    <div
+                        class="group relative rounded-2xl border border-slate-200 bg-white p-8 transition-all hover:border-orange-200 hover:shadow-xl hover:shadow-orange-500/10">
+                        <div
+                            class="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-orange-500 text-orange-600 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">2. Digital Marketing & SEO</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-500">Data-driven digital marketing and SEO
+                            strategies that increase your search rankings, drive qualified traffic, and generate leads.
+                        </p>
+                        <div
+                            class="mt-4 flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                            <span>Optimization</span> • <span>PPC Ads</span> • <span>Local SEO</span>
+                        </div>
+                        <a href="#"
+                            class="mt-6 inline-block font-semibold text-orange-600 hover:translate-x-1 transition-transform">👉
+                            Learn More</a>
+                    </div>
+                    <div
+                        class="group relative rounded-2xl border border-slate-200 bg-white p-8 transition-all hover:border-orange-200 hover:shadow-xl hover:shadow-orange-500/10">
+                        <div
+                            class="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-orange-500 text-orange-600 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">3. Ecommerce Growth</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-500">Scale your store and marketplace presence
+                            with proven growth strategies for Amazon, Shopify, Etsy, and multi-channel platforms.</p>
+                        <div
+                            class="mt-4 flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                            <span>Amazon/Shopify</span> • <span>Funnels</span> • <span>Scaling</span>
+                        </div>
+                        <a href="#"
+                            class="mt-6 inline-block font-semibold text-orange-600 hover:translate-x-1 transition-transform">👉
+                            Learn More</a>
+                    </div>
+                    <div
+                        class="group relative rounded-2xl border border-slate-200 bg-white p-8 transition-all hover:border-orange-200 hover:shadow-xl hover:shadow-orange-500/10">
+                        <div
+                            class="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-orange-500 text-orange-600 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">4. Social Media & YouTube</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-500">Grow your audience and build authority
+                            with powerful social media strategies and YouTube growth campaigns that convert.</p>
+                        <div
+                            class="mt-4 flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                            <span>Strategy</span> • <span>Paid Ads</span> • <span>YouTube SEO</span>
+                        </div>
+                        <a href="#"
+                            class="mt-6 inline-block font-semibold text-orange-600 hover:translate-x-1 transition-transform">👉
+                            Learn More</a>
+                    </div>
+                    <div
+                        class="group relative rounded-2xl border border-slate-200 bg-white p-8 transition-all hover:border-orange-200 hover:shadow-xl hover:shadow-orange-500/10">
+                        <div
+                            class="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-orange-500 text-orange-600 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">5. Creative Design & Video</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-500">High-impact visual design and video
+                            content that captures attention, strengthens your brand, and drives engagement.</p>
+                        <div
+                            class="mt-4 flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                            <span>Branding</span> • <span>Motion</span> • <span>Promo Videos</span>
+                        </div>
+                        <a href="#"
+                            class="mt-6 inline-block font-semibold text-orange-600 hover:translate-x-1 transition-transform">👉
+                            Learn More</a>
+                    </div>
+                    <div
+                        class="group relative rounded-2xl border-2 border-orange-500 bg-orange-50/30 p-8 transition-all hover:shadow-2xl hover:shadow-orange-500/20">
+                        <div
+                            class="absolute -top-3 right-6 bg-orange-500 px-3 py-1 text-[10px] font-bold uppercase text-white rounded-full shadow-lg">
+                            🔥 New & Powerful</div>
+                        <div
+                            class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-orange-500 text-white shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">6. Content & SEO Copywriting</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-700 font-medium">High-quality content writing
+                            that attracts traffic, builds authority, and converts visitors into loyal customers.</p>
+                        <div
+                            class="mt-4 flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-wider text-orange-700">
+                            <span>Blogs</span> • <span>SEO Articles</span> • <span>Sales Copy</span>
+                        </div>
+                        <a href="#"
+                            class="mt-6 inline-block font-semibold text-orange-600 hover:translate-x-1 transition-transform">👉
+                            Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="relative bg-white py-24 px-6 overflow-hidden border-t border-slate-100">
+            <div class="absolute inset-0 z-0 opacity-[0.03]"
+                style="background-image: linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px); background-size: 40px 40px;">
+            </div>
+
+            <div class="relative z-10 mx-auto max-w-6xl">
+                <div class="mb-20 text-center">
+                    <span
+                        class="inline-block rounded-full border border-orange-500 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-orange-600 mb-4">How
+                        we work</span>
+                    <h2 class="text-4xl font-extrabold tracking-tight md:text-5xl text-slate-900">Our Proven Growth
+                        Process</h2>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute left-5 md:left-1/2 top-5 bottom-5 w-0.5 -translate-x-1/2 bg-orange-100 z-0">
+                    </div>
+
+                    <div class="relative z-10 flex flex-col md:flex-row items-center mb-20">
+                        <div class="flex-1 w-full md:text-right md:pr-16 order-2 md:order-1 mt-4 md:mt-0">
+                            <h3 class="text-2xl font-bold text-slate-900">1. Strategy & Discovery Call</h3>
+                            <p class="mt-2 text-slate-500">We understand your business goals, target audience, and
+                                competitors to create a custom growth strategy designed for success.</p>
+                        </div>
+                        <div
+                            class="flex shrink-0 items-center justify-center ml-8 w-14 h-14 rounded-full bg-orange-600 text-white font-bold shadow-lg shadow-orange-500/40 order-1 md:order-2">
+                            1
+                        </div>
+                        <div class="flex-1 w-full hidden md:block order-3"></div>
+                    </div>
+
+                    <div class="relative z-10 flex flex-col md:flex-row items-center mb-20">
+                        <div class="flex-1 w-full hidden md:block"></div>
+                        <div
+                            class="flex shrink-0 items-center justify-center mr-8 w-14 h-14 rounded-full bg-orange-600 text-white font-bold shadow-lg shadow-orange-500/40">
+                            2
+                        </div>
+                        <div class="flex-1 w-full md:pl-16 mt-4 md:mt-0">
+                            <h3 class="text-2xl font-bold text-slate-900">2. Planning & Research</h3>
+                            <p class="mt-2 text-slate-500">We conduct in-depth research, audience analysis, keyword
+                                planning, and creative strategy to design high-impact campaigns.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 flex flex-col md:flex-row items-center mb-20">
+                        <div class="flex-1 w-full md:text-right md:pr-16 order-2 md:order-1 mt-4 md:mt-0">
+                            <h3 class="text-2xl font-bold text-slate-900">3. Launch, Optimize & Scale</h3>
+                            <p class="mt-2 text-slate-500">We launch your campaigns, monitor performance daily, optimize
+                                continuously, and scale what works to maximize traffic, leads, and revenue.</p>
+                        </div>
+                        <div
+                            class="flex shrink-0 items-center justify-center ml-8 w-14 h-14 rounded-full bg-orange-600 text-white font-bold shadow-lg shadow-orange-500/40 order-1 md:order-2">
+                            3
+                        </div>
+                        <div class="flex-1 w-full hidden md:block order-3"></div>
+                    </div>
+
+                    <div class="relative z-10 flex flex-col md:flex-row items-center">
+                        <div class="flex-1 w-full hidden md:block"></div>
+                        <div
+                            class="flex shrink-0 items-center justify-center mr-8 w-14 h-14 rounded-full bg-orange-600 text-white font-bold shadow-lg shadow-orange-500/40">
+                            4
+                        </div>
+                        <div class="flex-1 w-full md:pl-16 mt-4 md:mt-0">
+                            <h3 class="text-2xl font-bold text-slate-900">4. Reporting & Continuous Growth</h3>
+                            <p class="mt-2 text-slate-500">You receive transparent reports, performance insights, and
+                                ongoing strategy improvements to ensure long-term growth and ROI.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-6 bg-[#FCF8F5]">
+            <div class="mx-auto max-w-7xl">
+                <div class="overflow-hidden rounded-3xl bg-white border border-slate-100 shadow-xl shadow-orange-500/5">
+                    <div class="flex flex-col md:flex-row items-center">
+
+                        <div class="flex-1 p-10 md:p-16 lg:p-20">
+                            <h2
+                                class="text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl lg:text-6xl leading-tight">
+                                Ready to Grow Your <span class="text-orange-600">Business?</span>
+                            </h2>
+                            <p class="mt-6 text-lg text-slate-500 md:text-xl leading-relaxed max-w-xl">
+                                Let’s build a customized digital growth strategy that increases visibility, generates
+                                more leads, and scales your business faster.
+                            </p>
+                            <div class="mt-10">
+                                <a href="#"
+                                    class="inline-flex items-center justify-center rounded-full bg-orange-600 px-8 py-4 text-lg font-bold text-white transition-all hover:bg-orange-700 hover:shadow-lg hover:shadow-orange-500/30">
+                                    👉 Get a Free Consultation
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 relative w-full h-[400px] md:h-[600px]">
+                            <img src="./Assets/women.png" alt="Business woman on phone"
+                                class="absolute inset-0 h-full w-full object-cover object-center">
+
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent hidden md:block">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="w-full bg-[#fef8fc] pt-20 pb-10 border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
+                    <div class="lg:col-span-1 space-y-6">
+                        <img src="./Assets/Logo.png" alt="Zionike" class="h-16 w-auto object-contain">
+                        <p class="text-[#64748B] text-sm leading-relaxed">
+                            Boost your business with our full digital marketing solutions for success.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-[#2D3139] font-bold mb-6 tracking-wider text-sm uppercase">Quick Links</h4>
+                        <ul class="space-y-4 text-sm text-[#64748B]">
+                            <li><a href="#" class="hover:text-orange-500 transition">Home</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">About</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">Blog</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-[#2D3139] font-bold mb-6 tracking-wider text-sm uppercase">Services</h4>
+                        <ul class="space-y-4 text-sm text-[#64748B]">
+                            <li><a href="#" class="hover:text-orange-500 transition">Website Design</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">Digital Marketing & SEO</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">Mobile & Web Development</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">E-commerce Solutions</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-[#2D3139] font-bold mb-6 tracking-wider text-sm uppercase">Contact</h4>
+                        <ul class="space-y-4 text-sm text-[#64748B]">
+                            <li><a href="#" class="hover:text-orange-500 transition">Schedule a Call</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">Get Started</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">Connect</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">Google Review</a></li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col items-start">
+                        <h4 class="text-[#2D3139] font-bold mb-6 tracking-wider text-sm uppercase">Our Rewards</h4>
+                        <img src="./Assets/reward.png" alt="Rewards" class="w-full max-w-[160px]">
+                    </div>
+                </div>
+                <div class="border-t border-slate-200/60 pt-8 text-center">
+                    <p class="text-[#64748B] text-sm">
+                        Copyright © 2026 <span class="font-bold text-[#2D3139]">Zionike</span> All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const servicesBtn = document.getElementById('mobile-services-btn');
+            const servicesList = document.getElementById('mobile-services-list');
+            const arrow = document.getElementById('mobile-arrow');
+
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+            });
+
+            servicesBtn.addEventListener('click', () => {
+                servicesList.classList.toggle('hidden');
+                servicesList.classList.toggle('flex');
+                arrow.classList.toggle('rotate-180');
+            });
+        </script>
+</body>
+
+</html>
