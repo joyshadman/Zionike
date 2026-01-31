@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zionike - Growth Marketing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./CSS/Style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="bg-[#fef8fc] text-slate-800">
+
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="./Assets/Logo.png" alt="Zionike Logo"
+                    class="h-14 md:h-20 w-auto object-contain transform scale-110">
+            </div>
+
+            <nav class="hidden lg:flex items-center space-x-7 glass-nav px-8 py-3 rounded-full shadow-lg relative">
+                <a href="#" class="font-medium hover:text-orange-500 transition">Home</a>
+
+                <div class="relative group cursor-pointer font-medium flex items-center py-2">
+                    <span class="hover:text-orange-500 transition">Services</span>
+                    <svg class="w-4 h-4 ml-1 group-hover:rotate-180 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+
+                    <div
+                        class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60]">
+                        <div class="glass-dropdown rounded-2xl shadow-2xl overflow-hidden py-2 border border-white/20">
+                            <a href="#"
+                                class="block px-6 py-3 text-sm text-slate-800 hover:bg-orange-50 hover:text-orange-600 border-b border-slate-50 transition">Website
+                                design</a>
+                            <a href="#"
+                                class="block px-6 py-3 text-sm text-slate-800 hover:bg-orange-50 hover:text-orange-600 border-b border-slate-50 transition">Digital
+                                Marketing & SEO</a>
+                            <a href="#"
+                                class="block px-6 py-3 text-sm text-slate-800 hover:bg-orange-50 hover:text-orange-600 border-b border-slate-50 transition">Ecommerce
+                                & Growth</a>
+                            <a href="#"
+                                class="block px-6 py-3 text-sm text-slate-800 hover:bg-orange-50 hover:text-orange-600 border-b border-slate-50 transition">Social
+                                Media & YouTube</a>
+                            <a href="#"
+                                class="block px-6 py-3 text-sm text-slate-800 hover:bg-orange-50 hover:text-orange-600 border-b border-slate-50 transition">Content
+                                Writing</a>
+                            <a href="#"
+                                class="block px-6 py-3 text-sm text-slate-800 hover:bg-orange-50 hover:text-orange-600 transition">Creative
+                                Video & Design</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="font-medium hover:text-orange-500 transition">Blog</a>
+                <a href="#" class="font-medium hover:text-orange-500 transition">Portfolio</a>
+                <a href="#" class="font-medium hover:text-orange-500 transition">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <button
+                    class="hidden md:block bg-orange-500 text-white px-7 py-2.5 rounded-full font-bold shadow-[0_4px_0_0_#c2410c] active:translate-y-[1px] transition-all">
+                    Contact Us
+                </button>
+
+                <button id="menu-toggle"
+                    class="lg:hidden p-2 bg-white/90 rounded-full shadow-md border border-slate-100 text-slate-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden lg:hidden flex-col bg-white border-b shadow-2xl px-6 py-8 space-y-6 overflow-y-auto max-h-screen">
+            <a href="#" class="text-xl font-bold text-slate-900">Home</a>
+
+            <div class="space-y-4">
+                <button id="mobile-services-btn"
+                    class="w-full flex justify-between items-center text-xl font-bold text-slate-900 group">
+                    Services
+                    <svg id="mobile-arrow" class="w-5 h-5 transition-transform duration-300" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="mobile-services-list"
+                    class="hidden flex-col space-y-3 pl-4 border-l-2 border-orange-100 transition-all">
+                    <a href="#" class="text-slate-600 font-medium py-1">Website Design</a>
+                    <a href="#" class="text-slate-600 font-medium py-1">Digital Marketing & SEO</a>
+                    <a href="#" class="text-slate-600 font-medium py-1">Ecommerce & Marketplace Growth</a>
+                    <a href="#" class="text-slate-600 font-medium py-1">Social Media & YouTube</a>
+                    <a href="#" class="text-slate-600 font-medium py-1">Content Writing & Copywriting</a>
+                    <a href="#" class="text-slate-600 font-medium py-1">Creative Video Production</a>
+                </div>
+            </div>
+
+            <a href="#" class="text-xl font-bold text-slate-900 border-t pt-4">Blog</a>
+            <a href="#" class="text-xl font-bold text-slate-900 border-t pt-4">Portfolio</a>
+            <a href="#" class="text-xl font-bold text-slate-900 border-t pt-4">Contact</a>
+
+            <button class="w-full bg-orange-500 text-white py-4 rounded-2xl font-bold shadow-lg mt-4">
+                Start Conversation
+            </button>
+        </div>
+    </header>
+
+    <script>
+        // Logic for toggling menus
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const servicesBtn = document.getElementById('mobile-services-btn');
+        const servicesList = document.getElementById('mobile-services-list');
+        const arrow = document.getElementById('mobile-arrow');
+
+        // Main menu toggle
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Services accordion toggle
+        servicesBtn.addEventListener('click', () => {
+            servicesList.classList.toggle('hidden');
+            servicesList.classList.toggle('flex');
+            arrow.classList.toggle('rotate-180');
+        });
+    </script>
+
+    <main class="max-w-7xl mx-auto px-6 pt-32 pb-24 grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1 flex justify-center ">
+            <div class="relative w-full max-w-md aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl ">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800"
+                    alt="Zionike Team" class="w-full h-full object-cover ">
+            </div>
+        </div>
+
+        <div class="order-1 md:order-2 space-y-8">
+            <div class="space-y-1 ">
+                <h2 class="serif italic text-4xl text-slate-800">Welcome!</h2>
+                <div class="w-28 h-1.5 bg-orange-300 rounded-full "></div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-black leading-tight text-slate-900">
+                Get More Leads & Sales. Guaranteed Growth Marketing
+            </h1>
+            <p class="text-slate-500 text-xl leading-relaxed max-w-lg italic">
+                We Help Businesses Scale With High-Performance SEO, Paid Media, And Conversion Strategies Designed To
+                Maximize ROI And Dominate Your Market.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-4">
+                <button
+                    class="bg-orange-500 text-white px-10 py-4 rounded-xl font-bold shadow-[0_5px_0_0_#c2410c] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#c2410c] transition-all">
+                    Book a call
+                </button>
+                <button
+                    class="border-2 border-blue-100 text-blue-600 px-10 py-4 rounded-xl font-bold flex items-center hover:bg-blue-50 transition-all">
+                    Get A Free Quote ↗
+                </button>
+            </div>
+            <div class="pt-6">
+                <p class="font-bold text-slate-800">4.9/5 From 3,602 Customers</p>
+                <div class="flex text-orange-400 mt-1 text-2xl">★★★★★</div>
+            </div>
+        </div>
+    </main>
+
+    <section class="bg-white py-20 px-6 border-y border-slate-50">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="flex justify-center mb-8">
+                <div
+                    class="w-16 h-16 border-2 border-orange-500 rounded-full flex items-center justify-center text-orange-500">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+            </div>
+            <h2 class="text-4xl font-bold text-slate-900 mb-4">Key Features Overview</h2>
+            <p class="text-slate-500 max-w-2xl mx-auto text-lg mb-16">Get the most out of your advertising budget with
+                our targeted ad campaigns that deliver real results.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20     ">
+                <div><span class="block text-6xl font-black text-slate-900">100%</span><span
+                        class="text-slate-500 font-medium text-lg">Client Satisfaction</span></div>
+                <div><span class="block text-6xl font-black text-slate-900">18+</span><span
+                        class="text-slate-500 font-medium text-lg">Years of Experience</span></div>
+                <div><span class="block text-6xl font-black text-slate-900">+1,000</span><span
+                        class="text-slate-500 font-medium text-lg">Brands Successfully Grown</span></div>
+            </div>
+        </div>
+        <section class="bg-[#fef8fc] py-24 px-6 overflow-hidden">
+            <div class="max-w-7xl mx-auto">
+
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-16">
+                        Trusted by 100+ growing businesses
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 text-center">
+                        <div
+                            class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center hover:shadow-md transition-shadow">
+                            <div class="w-20 h-20 mb-6 flex items-center justify-center bg-slate-50 rounded-xl">
+                                <svg class="w-12 h-12 text-slate-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-4 leading-tight">Website Design & Development
+                            </h3>
+                            <p class="text-sm text-slate-500 mb-4">Custom, conversion-focused websites designed to
+                                elevate your brand and turn visitors into paying customers.</p>
+                            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Modern design.
+                                Mobile-ready. Built to convert.</p>
+                        </div>
+
+                        <div
+                            class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center hover:shadow-md transition-shadow">
+                            <div class="w-20 h-20 mb-6 flex items-center justify-center bg-slate-50 rounded-xl">
+                                <svg class="w-12 h-12 text-orange-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-4 leading-tight">Digital Marketing & SEO</h3>
+                            <p class="text-sm text-slate-500 mb-4">Data-driven SEO and digital marketing strategies that
+                                increase rankings, drive qualified traffic, and generate leads.</p>
+                            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Search growth that
+                                fuels real revenue.</p>
+                        </div>
+
+                        <div
+                            class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center hover:shadow-md transition-shadow">
+                            <div class="w-20 h-20 mb-6 flex items-center justify-center bg-slate-50 rounded-xl">
+                                <svg class="w-12 h-12 text-blue-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-4 leading-tight">Ecommerce & Marketplace
+                                Growth</h3>
+                            <p class="text-sm text-slate-500 mb-4">Scale your online store and marketplace sales with
+                                proven strategies that boost visibility and conversions.</p>
+                            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Sell more. Rank
+                                higher. Grow faster.</p>
+                        </div>
+
+                        <div
+                            class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center hover:shadow-md transition-shadow">
+                            <div class="w-20 h-20 mb-6 flex items-center justify-center bg-slate-50 rounded-xl">
+                                <svg class="w-12 h-12 text-indigo-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-4 leading-tight">Social Media & YouTube
+                                Growth</h3>
+                            <p class="text-sm text-slate-500 mb-4">Grow your audience, increase engagement, and build
+                                brand authority with powerful growth strategies.</p>
+                            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">More views. More
+                                followers. More customers.</p>
+                        </div>
+                    </div>
+
+                    <button
+                        class="px-8 py-3 mb-24 rounded-full border-2 border-slate-300 text-slate-500 font-semibold hover:bg-slate-100 transition-colors flex items-center mx-auto">
+                        View All Services
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="flex flex-col lg:flex-row items-center gap-12 pb-12">
+                    <div class="lg:w-1/2 space-y-8">
+                        <h2 class="text-4xl md:text-5xl font-bold text-slate-800 leading-tight">
+                            <span class="block">It All Starts</span>
+                            <span class="block mt-2">With a Spark</span>
+                        </h2>
+
+                        <div class="space-y-6 text-slate-600 leading-relaxed text-lg text-left">
+                            <p>With strategic planning, award-winning creative storytelling, and the latest marketing
+                                technology, we build innovative digital solutions that help brands stand out and scale
+                                faster.</p>
+                            <p>If you've been waiting to elevate your marketing presence, now is the time.</p>
+                            <p class="font-semibold text-slate-800">Digital marketing isn't the future — it's happening
+                                right now.</p>
+                        </div>
+
+                        <button
+                            class="bg-white border-2 border-orange-300 px-8 py-4 rounded-xl font-bold text-slate-800 shadow-[0_4px_0_0_rgba(251,191,36,1)] hover:translate-y-[2px] hover:shadow-none transition-all flex items-center gap-2">
+                            👉 Talk To A Marketing Expert
+                        </button>
+                    </div>
+
+                    <div class="lg:w-1/2">
+                        <div class="rounded-3xl overflow-hidden shadow-2xl transform lg:rotate-2">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200"
+                                alt="Team working on laptop" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class=" py-24">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                    Our Trusted Marketing Partners
+                </h2>
+                <p class="text-slate-600 max-w-2xl mx-auto mb-16">
+                    We collaborate with industry leaders to ensure your business stays ahead of the curve with the
+                    latest
+                    marketing technology.
+                </p>
+
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <div
+                        class="bg-white p-10 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center group hover:shadow-md transition-all">
+                        <div class="w-20 h-20 mb-4 overflow-hidden rounded-xl">
+                            <img src="http://googleusercontent.com/image_collection/image_retrieval/14698202007231284134_0"
+                                alt="Tech Partner"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                        </div>
+                        <span
+                            class="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-orange-600 transition-colors">Stellar
+                            Analytics</span>
+                    </div>
+
+                    <div
+                        class="bg-white p-10 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center group hover:shadow-md transition-all">
+                        <div class="w-20 h-20 mb-4 overflow-hidden rounded-xl">
+                            <img src="http://googleusercontent.com/image_collection/image_retrieval/14698202007231284134_1"
+                                alt="Growth Partner"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                        </div>
+                        <span
+                            class="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-orange-600 transition-colors">Apex
+                            Systems</span>
+                    </div>
+
+                    <div
+                        class="bg-white p-10 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center group hover:shadow-md transition-all">
+                        <div class="w-20 h-20 mb-4 overflow-hidden rounded-xl">
+                            <img src="http://googleusercontent.com/image_collection/image_retrieval/14698202007231284134_2"
+                                alt="AI Partner"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                        </div>
+                        <span
+                            class="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-orange-600 transition-colors">Neural
+                            Flow</span>
+                    </div>
+
+                    <div
+                        class="bg-white p-10 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center group hover:shadow-md transition-all">
+                        <div class="w-20 h-20 mb-4 overflow-hidden rounded-xl">
+                            <img src="http://googleusercontent.com/image_collection/image_retrieval/14698202007231284134_3"
+                                alt="Cloud Partner"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                        </div>
+                        <span
+                            class="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-orange-600 transition-colors">Skyline
+                            Media</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-24 px-6">
+            <div class="max-w-7xl mx-auto text-center">
+                <div class="relative inline-block mb-12">
+                    <h2 class="text-4xl font-bold text-slate-900 relative z-10 px-4">Featured Projects That Drive Real
+                        Results</h2>
+                    <div class="absolute top-1/1 left-0 w-full h-3 bg-orange-400/70 -rotate-1 z-0"></div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+                    <img src="./Assets/1.jpg"
+                        class="rounded-2xl shadow-md hover:scale-105 transition-all aspect-square object-cover">
+                    <img src="./Assets/2.jpg"
+                        class="rounded-2xl shadow-md hover:scale-105 transition-all aspect-square object-cover">
+                    <img src="./Assets/3.jpg"
+                        class="rounded-2xl shadow-md hover:scale-105 transition-all aspect-square object-cover">
+                    <img src="./Assets/4.jpg"
+                        class="rounded-2xl shadow-md hover:scale-105 transition-all aspect-square object-cover">
+                </div>
+                <button
+                    class="bg-white border-2 border-orange-400 px-10 py-4 rounded-xl font-bold text-slate-800 shadow-[0_5px_0_0_#FB923C] hover:translate-y-[2px] transition-all flex items-center gap-2 mx-auto">
+                    👉 View Our Work
+                </button>
+            </div>
+        </section>
+        <section class="bg-[#fef8fc] py-24 px-6">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Why Businesses Choose Us</h2>
+                <p class="text-slate-500 mb-16 max-w-2xl mx-auto">Discover what sets us apart as a trusted digital
+                    marketing
+                    agency.</p>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div
+                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all">
+                        <div
+                            class="w-20 h-20 mx-auto mb-6 bg-slate-50 rounded-2xl flex items-center justify-center p-4">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3161/3161158.png"
+                                class="w-full opacity-70">
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">Tailored Solutions</h3>
+                        <p class="text-sm text-slate-500">Custom strategies designed to fit your unique business goals.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all">
+                        <div
+                            class="w-20 h-20 mx-auto mb-6 bg-slate-50 rounded-2xl flex items-center justify-center p-4">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2493/2493321.png"
+                                class="w-full opacity-70">
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">Proven Expertise</h3>
+                        <p class="text-sm text-slate-500">A decade of experience across SEO and web design.</p>
+                    </div>
+                    <div
+                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all">
+                        <div
+                            class="w-20 h-20 mx-auto mb-6 bg-slate-50 rounded-2xl flex items-center justify-center p-4">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1055/1055644.png"
+                                class="w-full opacity-70">
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">Data-Driven</h3>
+                        <p class="text-sm text-slate-500">Decisions powered by analytics to maximize your ROI.</p>
+                    </div>
+                    <div
+                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all">
+                        <div
+                            class="w-20 h-20 mx-auto mb-6 bg-slate-50 rounded-2xl flex items-center justify-center p-4">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1189/1189132.png"
+                                class="w-full opacity-70">
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">Client-Centered</h3>
+                        <p class="text-sm text-slate-500">Your success is our priority in every partnership.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-[#FDFCFD] py-20 px-6">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#2D3139] mb-4">What Our Clients Say About Working With
+                    Us
+                </h2>
+                <p class="text-[#64748B] max-w-2xl mx-auto mb-16">Discover how businesses across industries are growing
+                    faster with our digital marketing strategies.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 text-left">
+                        <div class="flex items-center gap-3 mb-6">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" alt="Kayla"
+                                class="w-12 h-12 rounded-xl object-cover">
+                            <div>
+                                <div class="flex items-center gap-1">
+                                    <span class="text-yellow-400 text-sm">⭐</span>
+                                    <h4 class="font-bold text-[#2D3139] text-lg">Kayla</h4>
+                                </div>
+                                <p class="text-[10px] text-[#64748B] uppercase font-bold tracking-tight">E-Commerce
+                                    Brand
+                                    Owner</p>
+                            </div>
+                        </div>
+                        <p class="text-[#475569] text-[13px] leading-relaxed">"Working with this team completely
+                            transformed
+                            our online presence. Their strategies are innovative, their execution is flawless, and the
+                            results exceeded our expectations. We've seen a major increase in traffic and conversions."
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 text-left">
+                        <div class="flex items-center gap-3 mb-6">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150" alt="Jake"
+                                class="w-12 h-12 rounded-xl object-cover">
+                            <div>
+                                <div class="flex items-center gap-1">
+                                    <span class="text-yellow-400 text-sm">⭐</span>
+                                    <h4 class="font-bold text-[#2D3139] text-lg">Jake</h4>
+                                </div>
+                                <p class="text-[10px] text-[#64748B] uppercase font-bold tracking-tight">Digital
+                                    Products
+                                    Entrepreneur</p>
+                            </div>
+                        </div>
+                        <p class="text-[#475569] text-[13px] leading-relaxed">"Partnering with this agency was a
+                            game-changer. Their expertise, proactive communication, and data-driven approach helped us
+                            scale
+                            faster than we imagined. Highly recommended."</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 text-left">
+                        <div class="flex items-center gap-3 mb-6">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150" alt="AmyC"
+                                class="w-12 h-12 rounded-xl object-cover">
+                            <div>
+                                <div class="flex items-center gap-1">
+                                    <span class="text-yellow-400 text-sm">⭐</span>
+                                    <h4 class="font-bold text-[#2D3139] text-lg">AmyC.</h4>
+                                </div>
+                                <p class="text-[10px] text-[#64748B] uppercase font-bold tracking-tight">Financial
+                                    Marketing
+                                    Manager</p>
+                            </div>
+                        </div>
+                        <p class="text-[#475569] text-[13px] leading-relaxed">"The ROI has been outstanding. Their
+                            data-driven campaigns consistently outperform our goals and deliver measurable business
+                            growth.
+                            A truly professional team."</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 text-left">
+                        <div class="flex items-center gap-3 mb-6">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150" alt="David"
+                                class="w-12 h-12 rounded-xl object-cover">
+                            <div>
+                                <div class="flex items-center gap-1">
+                                    <span class="text-yellow-400 text-sm">⭐</span>
+                                    <h4 class="font-bold text-[#2D3139] text-lg">David</h4>
+                                </div>
+                                <p class="text-[10px] text-[#64748B] uppercase font-bold tracking-tight">CEO, Consulting
+                                    Firm</p>
+                            </div>
+                        </div>
+                        <p class="text-[#475569] text-[13px] leading-relaxed">"They redefined our branding and digital
+                            strategy, helping us generate more leads and significantly increase brand awareness. It
+                            feels
+                            like they're an extension of our internal team."</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 text-left">
+                        <div class="flex items-center gap-3 mb-6">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150" alt="Michael"
+                                class="w-12 h-12 rounded-xl object-cover">
+                            <div>
+                                <div class="flex items-center gap-1">
+                                    <span class="text-yellow-400 text-sm">⭐</span>
+                                    <h4 class="font-bold text-[#2D3139] text-lg">Michael S.</h4>
+                                </div>
+                                <p class="text-[10px] text-[#64748B] uppercase font-bold tracking-tight">SaaS Founder
+                                </p>
+                            </div>
+                        </div>
+                        <p class="text-[#475569] text-[13px] leading-relaxed">"From startup to scale, this team played a
+                            crucial role in building our recurring revenue. Creative, reliable, and always focused on
+                            performance."</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 text-left">
+                        <div class="flex items-center gap-3 mb-6">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150" alt="Saul"
+                                class="w-12 h-12 rounded-xl object-cover">
+                            <div>
+                                <div class="flex items-center gap-1">
+                                    <span class="text-yellow-400 text-sm">⭐</span>
+                                    <h4 class="font-bold text-[#2D3139] text-lg">Saul</h4>
+                                </div>
+                                <p class="text-[10px] text-[#64748B] uppercase font-bold tracking-tight">Small Business
+                                    Owner</p>
+                            </div>
+                        </div>
+                        <p class="text-[#475569] text-[13px] leading-relaxed">"Within weeks, we saw a major increase in
+                            engagement and leads. Their team understood our vision and delivered beyond expectations."
+                        </p>
+                    </div>
+
+                </div>
+
+        </section>
+        <section class="relative w-full h-64 flex items-center justify-center overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2029"
+                alt="Digital Growth Background" class="absolute inset-0 w-full h-full object-cover">
+
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-orange-900/40"></div>
+
+            <div class="relative z-10 text-center">
+                <h3 class="text-white text-xl font-bold mb-6 tracking-tight drop-shadow-md">
+                    Proven results from 100+ global brands.
+                </h3>
+                <button
+                    class="bg-white text-slate-900 px-10 py-4 rounded-2xl font-bold text-sm shadow-2xl hover:bg-orange-500 hover:text-white transition-all duration-300 border-b-4 border-orange-600 flex items-center gap-2 group mx-auto">
+                    <span class="group-hover:scale-125 transition-transform">👉</span>
+                    Read More Client Reviews
+                </button>
+            </div>
+        </section>
+
+        <section class="bg-white py-24 px-6 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-[#2D3139] mb-6">
+                    Lets Talk Growth
+                </h2>
+                <p class="text-[#475569] text-lg md:text-xl mb-10 font-medium">
+                    Ready to grow your business? Schedule a free consultation with our marketing experts
+                </p>
+
+                <button
+                    class="bg-[#FFB35B] hover:bg-[#ffa63d] text-slate-900 px-12 py-4 rounded-2xl font-bold text-lg shadow-sm transition-all">
+                    Start Conversation
+                </button>
+            </div>
+        </section>
+        <footer class="w-full bg-[#fef8fc] pt-20 pb-10 border-t border-slate-100">
+
+            <div class="max-w-7xl mx-auto px-6">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
+
+                    <div class="lg:col-span-1 space-y-6">
+                        <img src="./Assets/Logo.png" alt="Zionike" class="h-16 w-auto object-contain">
+                        <p class="text-[#64748B] text-sm leading-relaxed">
+                            <a href="#" class="text-black hover:text-orange-500 transition-colors">
+                                Boost your business with our full digital marketing solutions for success.
+                            </a>
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-[#2D3139] font-bold mb-6 tracking-wider text-sm uppercase">Quick Links</h4>
+                        <ul class="space-y-4 text-sm text-[#64748B]">
+                            <li><a href="#" class="hover:text-orange-500 transition">Home</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">About</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">Blog</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-[#2D3139] font-bold mb-6 tracking-wider text-sm uppercase">Services</h4>
+                        <ul class="space-y-4 text-sm text-[#64748B]">
+                            <li><a href="#" class="hover:text-orange-500 transition">Website Design</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">Digital Marketing & SEO</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">Mobile & Web Development</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">E-commerce Solutions</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-[#2D3139] font-bold mb-6 tracking-wider text-sm uppercase">Contact</h4>
+                        <ul class="space-y-4 text-sm text-[#64748B]">
+                            <li><a href="#" class="hover:text-orange-500 transition">Schedule a Call</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">Get Started</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">Connect</a></li>
+                            <li><a href="#" class="hover:text-orange-500 transition">Google Review</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-col items-start">
+                        <h4 class="text-[#2D3139] font-bold mb-6 tracking-wider text-sm uppercase">Our Rewards</h4>
+                        <img src="./Assets/reward.png" alt="Rewards"
+                            class="w-full max-w-[160px] ">
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-200/60 pt-8 text-center">
+                    <p class="text-[#64748B] text-sm">
+                        Copyright © 2026 <span class="font-bold text-[#2D3139]">Zionike</span> All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+
+</body>
+
+</html>
